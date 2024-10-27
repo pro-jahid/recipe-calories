@@ -22,15 +22,15 @@ const Foods = ({handleCalculate, calculate, handleRemove}) => {
         vulputate netus pharetra rhoncus. Eget urna volutpat curabitur elementum
         mauris aenean neque.
       </p>
-      <div className="flex gap-6 mt-8">
-        <div className="lg:w-3/5">
+      <div className="flex flex-wrap mt-8 gap-6">
+        <div className="lg:w-7/12">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
             {foods.map((food) => (
               <Food handleCalculate={handleCalculate} key={food.recipe_id} food={food} />
             ))}
           </div>
         </div>
-        <div className="lg:w-2/5">
+        <div className="lg:w-4/12">
          <CalculateFood handleRemove={handleRemove} calculate={calculate}></CalculateFood>
         </div>
       </div>
