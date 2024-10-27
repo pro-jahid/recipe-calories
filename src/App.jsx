@@ -10,10 +10,28 @@ function App() {
   
   const [calculate, setCalculate] = useState([]);
 
+  const handleRemove = (id) =>{
+    const remaining = calculate.filter(remove => remove.recipe_id !== id)
+    
+    setCalculate(remaining)
+    
+    
+  }
+
+  
 
   const handleCalculate = (food) =>{
-    const newCalculate = [...calculate, food]
-    setCalculate(newCalculate)
+    const exitsFood = calculate.find(f => f.recipe_id === food.recipe_id)
+    if(!exitsFood){
+      
+      const newCalculate = [...calculate, food]
+      setCalculate(newCalculate)
+      return
+    }
+    else{
+      alert(`This Food ${food.recipe_name} is already on preparing stage`)
+    }
+    
     
   }
 
@@ -23,7 +41,7 @@ function App() {
 
       <Header></Header>
       <HeroSection></HeroSection>
-      <Foods handleCalculate={handleCalculate} calculate={calculate}></Foods>
+      <Foods handleRemove={handleRemove} handleCalculate={handleCalculate} calculate={calculate}></Foods>
     </div>
     </>
   )

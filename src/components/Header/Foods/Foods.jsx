@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Food from "../Food/Food";
 import CalculateFood from "../CalculateFood/CalculateFood";
 
-const Foods = ({handleCalculate, calculate}) => {
+const Foods = ({handleCalculate, calculate, handleRemove}) => {
   const [foods, setFoods] = useState([]);
 
   
@@ -31,7 +31,7 @@ const Foods = ({handleCalculate, calculate}) => {
           </div>
         </div>
         <div className="lg:w-2/5">
-         <CalculateFood calculate={calculate}></CalculateFood>
+         <CalculateFood handleRemove={handleRemove} calculate={calculate}></CalculateFood>
         </div>
       </div>
     </div>

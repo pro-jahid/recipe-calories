@@ -1,6 +1,6 @@
 import TableCalculate from "../TableCalculate/TableCalculate";
 
-const CalculateFood = ({calculate}) => {
+const CalculateFood = ({calculate, handleRemove}) => {
     
   return (
     
@@ -17,7 +17,7 @@ const CalculateFood = ({calculate}) => {
         </div>
       </div>
         {
-            calculate.map(table => <TableCalculate key={table.id} table={table}></TableCalculate>)
+            calculate.map(table => <TableCalculate handleRemove={handleRemove} key={table.id} table={table}></TableCalculate>)
         }
     </div>
   );
